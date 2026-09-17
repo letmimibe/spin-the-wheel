@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4ede3" />
+  <meta name="description" content="A playful little spin wheel for decisions, giveaways and everything in between." />
+  <title>Spin the Wheel</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Spin the Wheel home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>spin<span class="dot">.</span></span>
+    </a>
+    <div class="top-actions">
+      <span class="badge">Made for tiny decisions</span>
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle dark mode">☼</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="intro">
+        <p class="eyebrow">DECIDE · PICK · PLAY</p>
+        <h1>Leave it to<br><span class="accent">the wheel.</span></h1>
+        <p class="lede">Add your options, give it a spin, and let chance do the awkward part.</p>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit-ring"></div>
+        <div class="orbit-dot dot-a"></div>
+        <div class="orbit-dot dot-b"></div>
+        <div class="orbit-star">✦</div>
+      </div>
+    </section>
+
+    <section class="app-grid">
+      <section class="panel wheel-panel">
+        <div class="panel-kicker">YOUR WHEEL</div>
+        <div class="wheel-wrap">
+          <div class="pointer" aria-hidden="true"></div>
+          <canvas id="wheel" width="760" height="760" aria-label="Spin wheel"></canvas>
+          <button id="spinBtn" class="spin-button" type="button">SPIN</button>
+        </div>
+        <div id="result" class="result" aria-live="polite">
+          <span class="result-label">Ready when you are.</span>
+          <strong id="resultText">Pick your fate ✦</strong>
+        </div>
+      </section>
+
+      <aside class="panel controls-panel">
+        <div class="controls-head">
+          <div>
+            <p class="eyebrow">OPTIONS</p>
+            <h2>What goes on the wheel?</h2>
+          </div>
+          <button id="shuffleBtn" class="secondary-btn" type="button">Shuffle</button>
+        </div>
+
+        <div id="entries" class="entries"></div>
+
+        <form id="addForm" class="add-form">
+          <input id="newEntry" type="text" maxlength="38" placeholder="Add an option…" autocomplete="off" />
+          <button class="add-btn" type="submit" aria-label="Add option">＋</button>
+        </form>
+
+        <div class="control-row">
+          <button id="resetBtn" class="text-btn" type="button">Reset defaults</button>
+          <button id="clearBtn" class="text-btn danger" type="button">Clear all</button>
+        </div>
+
+        <div class="mini-note">
+          <span>Local only</span>
+          <p>Your list stays in your browser. Nothing is uploaded anywhere.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <span class="brand footer-brand"><span class="brand-mark" aria-hidden="true">✦</span><span>spin<span class="dot">.</span></span></span>
+    <span>Created with care by @letmimibe</span>
+  </footer>
+
+  <div id="confetti" class="confetti" aria-hidden="true"></div>
+  <script src="app.js"></script>
+</body>
+</html>
